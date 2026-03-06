@@ -3,104 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>关于 Layla | 热爱音乐与艺术的20岁</title>
-    <!-- 核心样式：以绿色为主调，贴合你的喜好 -->
+    <title>Layla | 高校学生个人主页</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: 微软雅黑, Arial, sans-serif;
-            background-color: #f9fcf8; /* 浅绿底，清新不刺眼 */
-            color: #2d4739; /* 深绿文字，和谐统一 */
-            line-height: 1.8;
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #f0f5f0;
+            color: #333;
+            line-height: 1.6;
         }
+
         .container {
-            max-width: 700px;
-            margin: 60px auto;
-            padding: 30px 40px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(143, 188, 143, 0.2); /* 浅绿阴影 */
-            border: 1px solid #d5e8d4;
+            max-width: 900px;
+            margin: 80px auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
         }
-        .avatar-box {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        /* 绿色圆形头像占位（你可以替换成自己的图片链接） */
-        .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background-color: #8fbc8f;
-            margin: 0 auto;
+
+        /* 左侧头像区域 */
+        .avatar-section {
+            flex: 1 1 300px;
+            background: linear-gradient(135deg, #556b2f, #8fbc8f);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 50px;
-            color: white;
+            padding: 40px;
         }
-        h1 {
-            text-align: center;
-            color: #556b2f; /* 橄榄绿，突出标题 */
-            margin: 20px 0;
-            font-size: 32px;
+
+        .avatar-wrapper {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            background-color: #fff;
         }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 右侧简介区域 */
+        .intro-section {
+            flex: 2 1 400px;
+            padding: 50px 40px;
+        }
+
+        .intro-section h1 {
+            font-size: 36px;
+            color: #2d4739;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .intro-section .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #8fbc8f;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .info-list {
+            margin: 30px 0;
+        }
+
         .info-item {
             margin: 15px 0;
-            font-size: 18px;
+            font-size: 16px;
         }
+
         .info-item strong {
-            color: #2e8b57; /* 海草绿，强调关键词 */
+            color: #2e8b57;
+            font-weight: 600;
+            display: inline-block;
+            width: 80px;
         }
-        .hobby {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px dashed #b4d8a7;
+
+        .hobby-desc {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9fcf8;
+            border-left: 4px solid #8fbc8f;
+            border-radius: 4px;
+            font-style: italic;
+            color: #555;
         }
+
         footer {
             text-align: center;
-            margin-top: 40px;
+            padding: 20px;
             color: #7da370;
             font-size: 14px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                margin: 20px;
+            }
+            .avatar-section {
+                padding: 30px;
+            }
+            .avatar-wrapper {
+                width: 150px;
+                height: 150px;
+            }
+            .intro-section {
+                padding: 30px 25px;
+            }
+            .intro-section h1 {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="avatar-box">
-            <!-- 头像占位：你可以把下面的 "L" 换成自己的头像图片，替换方式看注释 -->
-            <!-- 替换示例：<img src="你的图片链接" class="avatar" alt="Layla"> -->
-            <div class="avatar">L</div>
-        </div>
-        
-        <h1>Hi，我是 Layla ✨</h1>
-        
-        <div class="info-item">
-            <strong>年龄：</strong>20岁
-        </div>
-        <div class="info-item">
-            <strong>身份：</strong>大三女学生
-        </div>
-        
-        <div class="hobby">
-            <div class="info-item">
-                <strong>热爱：</strong>音乐 & 艺术
-            </div>
-            <div class="info-item">
-                <strong>偏爱：</strong>充满生机的绿色 💚
-            </div>
-            <div class="info-item">
-                喜欢在旋律和色彩里感受生活，在艺术的世界里寻找属于自己的小美好～
+        <!-- 左侧头像 -->
+        <div class="avatar-section">
+            <div class="avatar-wrapper">
+                <!-- 替换为你的头像图片链接 -->
+                <img src="https://picsum.photos/200/200?random=1" alt="Layla" class="avatar">
             </div>
         </div>
-        
-        <footer>
-            Layla's Personal Page · 2026
-        </footer>
+
+        <!-- 右侧简介 -->
+        <div class="intro-section">
+            <h1>Layla</h1>
+            <div class="subtitle">大三学生 | 热爱音乐与艺术</div>
+
+            <div class="info-list">
+                <div class="info-item">
+                    <strong>年龄</strong> 20岁
+                </div>
+                <div class="info-item">
+                    <strong>院校</strong> 海南大学
+                </div>
+                <div class="info-item">
+                    <strong>专业</strong> 软件工程
+                </div>
+                <div class="info-item">
+                    <strong>爱好</strong> 音乐、艺术、绿色
+                </div>
+            </div>
+
+            <div class="hobby-desc">
+                我是一名对世界充满好奇的大三学生，在代码与逻辑之外，更热爱用音乐和艺术表达自我。绿色是我最钟爱的颜色，它代表着生机、希望与无限可能。
+            </div>
+        </div>
     </div>
+
+    <footer>
+        &copy; 2026 Layla's Personal Page | Designed with 💚
+    </footer>
 </body>
 </html>
